@@ -12,15 +12,27 @@ mysql.createConnection({
 	.catch(err => console.log(err))
 
 module.exports = {
-	selectAll: function(table){
-		return conn.query("SELECT * FROM ??", table);
+	all: function(table){
+		return conn.query(`
+				SELECT * FROM ??
+			`, table);
 	},
 
-	insertOne: function(){
-
+	create: function(table, cols, vals){
+		return conn.query(`
+				INSERT INTO ??(
+					??
+				)VALUES (
+					?
+				)
+			`, [table, cols.join(", "), vals.join(", ")]);
 	},
 
-	updateOne: function(){
+	update: function(table, obj, condition){
 		
+	},
+
+	delete: function(table, condition){
+
 	}
 }
