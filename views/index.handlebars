@@ -1,3 +1,5 @@
+<script src="/assets/js/index.js"></script>
+
 <h1>burgers</h1>
 <ul>
 {{#each burgers}}
@@ -8,3 +10,13 @@
 	</li>
 {{/each}}
 </ul>
+
+<br><br>
+
+<form id="addBurger">
+	<div class="form-group">
+		<input type="text" class="form-control" id="burgerInput" placeholder="hamburger" aria-discribedby="burgerHelp" autocomplete="off">	
+		<small id="burgerHelp" class="form-text text-muted">Enter the name of your burger</small>
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
