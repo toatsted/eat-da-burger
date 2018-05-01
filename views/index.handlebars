@@ -1,22 +1,60 @@
 <script src="/assets/js/index.js"></script>
+<link rel="stylesheet" href="/assets/css/index.css">
 
-<h1>burgers</h1>
-<ul>
-{{#each burgers}}
-	<li>
-		id: {{id}} <br>
-		name: {{name}} <br>
-		eaten: {{eaten}} <br><br>
-	</li>
-{{/each}}
-</ul>
+<h1 class="text-center bg-secondary text-danger">
+	<i class="fas fa-align-justify"></i> burgers
+</h1>
 
-<br><br>
-
-<form id="addBurger">
-	<div class="form-group">
-		<input type="text" class="form-control" id="burgerInput" placeholder="hamburger" aria-discribedby="burgerHelp" autocomplete="off">	
-		<small id="burgerHelp" class="form-text text-muted">Enter the name of your burger</small>
+<div class="container">
+	<div class="row">
+		<div class="col-6">
+			<h2 class="text-center bg-secondary text-warning">
+				Fresh burgers
+			</h2>
+		</div>
+		<div class="col-6">
+			<h2 class="text-center bg-secondary text-warning">
+				Eaten burgers
+			</h2>		
+		</div>
 	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
-</form>
+	<div class="row">
+		<div class="col-6">
+			<ul class="list-group">
+			{{#each burgers}}
+				{{#unless eaten}}
+				<li class="list-group-item">
+					<p class="text-secondary">
+						<b>id:</b> <span class="text-primary">{{id}}</span> <br>
+						<b>name:</b> <span class="text-primary">{{name}}</span>
+					</p>
+				</li>
+				{{/unless}}
+			{{/each}}
+			</ul>
+		</div>
+		<div class="col-6">
+			<ul class="list-group">
+			{{#each burgers}}
+				{{#if eaten}}
+				<li class="list-group-item">
+					<p class="text-secondary">
+						<b>id:</b> <span class="text-primary">{{id}}</span> <br>
+						<b>name:</b> <span class="text-primary">{{name}}</span> 	
+					</p>
+				</li>
+				{{/if}}
+			{{/each}}
+			</ul>
+		</div>	
+	</div>
+
+	<form id="addBurger">
+		<div class="form-group">
+			<label for="burgerInput"><h3>Add a burger</h3></label>
+			<input type="text" class="form-control" id="burgerInput" placeholder="hamburger" aria-discribedby="burgerHelp" autocomplete="off">	
+			<small id="burgerHelp" class="form-text text-muted">Enter the name of your burger</small>
+		</div>
+		<button type="submit" class="btn btn-danger">Submit</button>
+	</form>
+</div>

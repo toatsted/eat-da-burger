@@ -1,15 +1,6 @@
-const mysql = require("promise-mysql");
-
 let conn;
-
-mysql.createConnection({
-		host: "localhost",
-		user: "root",
-		password: "Samueljh1",
-		database: "burgers_db"
-	})
+require("./connection.js")
 	.then(connection => conn = connection)
-	.catch(err => console.log(err))
 
 module.exports = {
 	all: function(table){
