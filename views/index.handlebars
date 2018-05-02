@@ -1,18 +1,18 @@
 <link rel="stylesheet" href="/assets/css/index.css">
 
-<h1 class="text-center bg-secondary text-danger">
+<h1 class="text-center text-danger">
 	<i class="fas fa-align-justify"></i> burgers
 </h1>
 
 <div class="container">
 	<div class="row">
 		<div class="col-6">
-			<h2 class="text-center bg-secondary text-warning">
+			<h2 class="text-center text-muted">
 				Fresh burgers
 			</h2>
 		</div>
 		<div class="col-6">
-			<h2 class="text-center bg-secondary text-warning">
+			<h2 class="text-center text-muted">
 				Eaten burgers
 			</h2>		
 		</div>
@@ -25,13 +25,15 @@
 				<li class="list-group-item">
 					<div class="row">
 						<div class="col-8">
-							<p class="text-secondary">
-								<b>id:</b> <span class="text-primary">{{this.id}}</span> <br>
-								<b>name:</b> <span class="text-primary">{{this.name}}</span>
-							</p>
+							<a href="/{{this.id}}">
+								<p class="text-secondary">
+									<b>id:</b> <span class="text-primary">{{this.id}}</span> <br>
+									<b>name:</b> <span class="text-primary">{{this.name}}</span>
+								</p>
+							</a>
 						</div>
 						<div class="col-4">
-							<button data-id={{id}} class="eatBtn btn btn-danger">eat</button>
+							<button data-id={{this.id}} class="eatBtn btn btn-danger">eat</button>
 						</div>
 					</div>
 				</li>
@@ -46,13 +48,15 @@
 				<li class="list-group-item">
 					<div class="row">
 						<div class="col-8">
-							<p class="text-secondary">
-								<b>id:</b> <span class="text-primary">{{this.id}}</span> <br>
-								<b>name:</b> <span class="text-primary">{{this.name}}</span>
-							</p>
+							<a href="/{{this.id}}">
+								<p class="text-secondary">
+									<b>id:</b> <span class="text-primary">{{this.id}}</span> <br>
+									<b>name:</b> <span class="text-primary">{{this.name}}</span>
+								</p>
+							</a>
 						</div>
 						<div class="col-4">
-							<button data-id={{id}} class="delBtn btn btn-danger">delete</button>
+							<button data-id={{this.id}} class="delBtn btn btn-danger">delete</button>
 						</div>
 					</div>
 				</li>
@@ -64,7 +68,7 @@
 
 	<form id="addBurger">
 		<div class="form-group">
-			<label for="burgerInput"><h3>Add a burger</h3></label>
+			<label for="burgerInput"><h3 class="text-muted">Add a burger</h3></label>
 			<input type="text" class="form-control" id="burgerInput" placeholder="hamburger" aria-discribedby="burgerHelp" autocomplete="off">	
 			<small id="burgerHelp" class="form-text text-muted">Enter the name of your burger</small>
 		</div>

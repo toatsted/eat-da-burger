@@ -9,6 +9,13 @@ module.exports = {
 			`, table);
 	},
 
+	one: function(table, condition){
+		return conn.query(`
+				SELECT * FROM ??
+				WHERE ?
+			`, [table, condition]);
+	},
+
 	create: function(table, col, val){
 		return conn.query(`
 				INSERT INTO ??(

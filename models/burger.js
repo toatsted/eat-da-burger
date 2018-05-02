@@ -5,6 +5,10 @@ module.exports = {
 		return orm.all("burgers");
 	},
 
+	one: function(condition){
+		return orm.one("burgers", condition)
+	},
+
 	create: function(cols, vals){
 		return orm.create("burgers", cols, vals);
 	},
