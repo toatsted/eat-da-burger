@@ -9,8 +9,8 @@ module.exports = {
 		return orm.create("burgers", cols, vals);
 	},
 
-	update: function(obj, condition){
-
+	update: function(val, condition){
+		return orm.update("burgers", val, condition)
 	},
 
 	delete: function(condition){

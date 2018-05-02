@@ -15,7 +15,20 @@ router.get("/", (req, res) => {
 })
 
 router.post("/", (req, res) => {
-	burger.create(["name"], [req.body.name])
+	burger.create("name", req.body.name)
+		.then(data => res.sendStatus(200))
+		.catch(err => {
+			console.log(err);
+			res.sendStatus(500);
+		})
+})
+
+router.put("/:id", (req, res) => {
+	burger.update({
+			eaten: req.body.eaten
+		},{
+			id: req.params.id
+		})
 		.then(data => res.sendStatus(200))
 		.catch(err => {
 			console.log(err);

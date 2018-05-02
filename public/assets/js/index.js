@@ -1,5 +1,5 @@
 $(() => {
-	$("#addBurger").on("submit", (e) => {
+	$("#addBurger").on("submit", function(e){
 		e.preventDefault();
 
 		$.ajax("/", {
@@ -9,5 +9,16 @@ $(() => {
 			},
 			success: data => location.reload()
 		})
-	})
+	});
+ 	
+	$(".eatBtn").on("click", function(e){
+		let id = $(this).data("id");
+		$.ajax(`/${id}`, {
+			type: "PUT",
+			data: {
+				eaten: 1
+			},
+			success: data => location.reload()
+		})
+	});
 });

@@ -9,18 +9,22 @@ module.exports = {
 			`, table);
 	},
 
-	create: function(table, cols, vals){
+	create: function(table, col, val){
 		return conn.query(`
 				INSERT INTO ??(
 					??
 				)VALUES (
 					?
 				)
-			`, [table, cols.join(", "), vals.join(", ")]);
+			`, [table, col, val]);
 	},
 
-	update: function(table, obj, condition){
-		
+	update: function(table, val, condition){
+		return conn.query(`
+				UPDATE ??
+				SET ?
+				WHERE ?
+			`, [table, val, condition]);
 	},
 
 	delete: function(table, condition){
