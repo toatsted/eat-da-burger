@@ -10,10 +10,10 @@ module.exports = {
 	},
 
 	update: function(val, condition){
-		return orm.update("burgers", val, condition)
+		return orm.update("burgers", val, condition);
 	},
 
 	delete: function(condition){
-
+		return orm.delete("burgers", condition);
 	}
 }

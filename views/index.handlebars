@@ -44,10 +44,17 @@
 			{{#each burgers}}
 				{{#if eaten}}
 				<li class="list-group-item">
-					<p class="text-secondary">
-						<b>id:</b> <span class="text-primary">{{id}}</span> <br>
-						<b>name:</b> <span class="text-primary">{{name}}</span> 	
-					</p>
+					<div class="row">
+						<div class="col-8">
+							<p class="text-secondary">
+								<b>id:</b> <span class="text-primary">{{this.id}}</span> <br>
+								<b>name:</b> <span class="text-primary">{{this.name}}</span>
+							</p>
+						</div>
+						<div class="col-4">
+							<button data-id={{id}} class="delBtn btn btn-danger">delete</button>
+						</div>
+					</div>
 				</li>
 				{{/if}}
 			{{/each}}

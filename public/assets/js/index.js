@@ -21,4 +21,12 @@ $(() => {
 			success: data => location.reload()
 		})
 	});
+
+	$(".delBtn").on("click", function(e){
+		let id = $(this).data("id");
+		$.ajax(`/${id}`, {
+			type: "DELETE",
+			success: data => location.reload()
+		})
+	});
 });

@@ -28,6 +28,9 @@ module.exports = {
 	},
 
 	delete: function(table, condition){
-
+		return conn.query(`
+				DELETE FROM ??
+				WHERE ?
+			`, [table, condition]);
 	}
 }
