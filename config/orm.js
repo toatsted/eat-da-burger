@@ -13,6 +13,7 @@ module.exports = {
 		return conn.query(`
 				SELECT * FROM ??
 				WHERE ?
+				LIMIT 1
 			`, [table, condition]);
 	},
 

@@ -19,7 +19,7 @@ router.get("/:id", (req, res) => {
 	burger.one({
 			id: req.params.id
 		})
-		.then(data => res.render("single", {burger: data}))
+		.then(data => res.render("single", data[0]))
 		.catch(err => {
 			console.log(err);
 			res.sendStatus(500);
@@ -48,6 +48,20 @@ router.put("/:id", (req, res) => {
 			console.log(err);
 			res.sendStatus(500);
 		})
+})
+
+router.put("/:id/update", (req, res) => {
+	burger.update({
+		name: req.body.name,
+		eaten: req.body.eaten
+	},{
+		id: req.params.id
+	})
+	.then(data => res.sendStatus(200))
+	.catch(err => {
+		console.log(err);
+		res.sendStatus(500);
+	})
 })
 
 // delete routes
