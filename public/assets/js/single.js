@@ -7,7 +7,7 @@ $(() => {
 				type: "PUT",
 				data: {
 					name: $("#nameInput").val().trim(),
-					eaten: parseInt($("input[name=eatenRadio]:checked").val())
+					eaten: parseInt($("[name=eatenRadio]:checked").val())
 				}
 			})
 			.then(data => window.location.replace("/"))
